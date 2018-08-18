@@ -8,7 +8,7 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'SI Petrokimia') }}</title>
+    <title>{{ config('app.name', 'Safety Induction') }}</title>
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
@@ -25,7 +25,7 @@
      <link href="{{ asset('css/style2.css') }}" rel="stylesheet">
 
      <link rel="icon" type="image/png" sizes="16x16" href="../../assets/images/favicon.png">
-    <title>Matrix Template - The Ultimate Multipurpose admin template</title>
+    <title>Sistem Safety Induction</title>
     <!-- Custom CSS -->
     <link href="../../assets/libs/jquery-steps/jquery.steps.css" rel="stylesheet">
     <link href="../../assets/libs/jquery-steps/steps.css" rel="stylesheet">

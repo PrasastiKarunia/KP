@@ -37,11 +37,43 @@ class FpController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(Request $data)
     {
-        Fp::create($request->except('_token'));
+        $last_jadwal = Fp::orderby('tanggal','desc')->first();
         
-        return view ('jadwal');
+        $jadwal_test['tanggal'] = date('Y-m-d H:i:s',strtotime('now'));
+
+        if($last_jadwal == null ){
+            $last_jadwal['tanggal'] = $jadwal_test;
+        }
+        elseif(date_diff($last_jadwal['tanggal'],$jadwal_test) < 0 ){
+            $last_jadwal['tanggal'] = $jadwal_test;
+        }
+        elseif(Fp::where('tanggal', $last_jadwal['tanggal'])->count() < 50){
+            Fp::create(array_merge($data->all(), ['tanggal' => $last_jadwal['tanggal']]));
+            return view("jadwal")->with($last_jadwal);
+        }else{  
+            $jadwal_test = jadwal_selanjutnya($last_jadwal['tanggal']);
+        }
+        $jadwal = new Fp($data->all());
+        $jadwal->tanggal = $last_jadwal;
+        $jadwal->save();
+        Fp::create(array_merge($data->all(), ['tanggal' => $last_jadwal['tanggal']]));
+        return view("jadwal")->with($last_jadwal);
+    }
+    public function jadwal_selanjutnya($last_jadwal){ //katakanlah $last_jadwal hari kamis (tanggal 25)
+    $tanggal['0'] = strtotime('next monday',strtotime($last_jadwal));           //nyari hari senin terdekat     24
+    $tanggal['1'] = strtotime('next wednesday',strtotime($last_jadwal));        //nyari hari rabu terdekat      26
+    $tanggal['2'] = strtotime('next friday',strtotime($last_jadwal));           //nyari hari jumat terdekat     21
+    
+    usort($tanggal, function($a, $b) { // buat nyari hari yang paling dekat dari 3 hari diatas
+        $dateTimestamp1 = strtotime($a);                                        // kita sorting ascending tanggalnya biar mulai dari yang terkecil
+        $dateTimestamp2 = strtotime($b);                                        // urutan array dari $tanggal jadi kayak gini (bawah)
+        return $dateTimestamp1 < $dateTimestamp2 ? -1: 1;                       // 21, 24, 26
+    });
+
+    return($tanggal[0]);                            // karena yang ke 0 pasti paling dekat, kita return tangal[0]
+    
     }
 
     /**

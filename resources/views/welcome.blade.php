@@ -5,7 +5,7 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>SI Petrokimia</title>
+        <title>Sistem Safety Induction</title>
 
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
@@ -19,7 +19,7 @@
                 color: #fff;
                 font-family: 'Raleway', sans-serif;
                 font-weight: bold;
-                height: 100vh;
+                /*height: 100vh;*/
                 margin: 0;
             }
 
@@ -71,34 +71,6 @@
                 
             }
 
-            ul.menu li{
-                display: inline-block;
-                padding: 0;
-                width: 150px;
-                height: 30px;
-                line-height: 30px;
-            }
-
-            ul.subMenu{
-                display: none;
-            }
-
-            ul.menu li:hover ul.subMenu{
-                display: block;
-                position: absolute;
-            }
-            ul.menu li:hover{
-                background: #f3da3a;
-                color: #000;
-                cursor: pointer;
-            }
-            ul.subMenu{
-                margin-left: -25px;
-            }
-            ul.subMenu li{
-                display: block;
-            }
-
             .m-b-md {
                 margin-bottom: 30px;
             }
@@ -115,7 +87,7 @@
                         <a href="{{ url('/fkp') }}">Formulir Kontrak Perusahaan</a>
                     @else
                         <a href="{{ route('login') }}" style="font-size: 14px">Login</a>
-                        <!--  <a href="{{ route('register') }}">Register</a> -->
+                         <a href="{{ route('register') }}">Register</a>
                     @endauth
                 </div>
             @endif
@@ -123,7 +95,7 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                    SI Petrokimia Gresik
+                    Sistem Safety Induction
                 </div>
 
                 <!-- <div class="links">
