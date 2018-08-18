@@ -9,7 +9,7 @@
 
 				<div class="card-body">
 					<label class="row justify-content-center" style="text-align: center;">Berikut adalah jadwal safety induction yang harus diikuti </label> 
-					<label class="row justify-content-center" style="font-size: 24px"> Tanggal : {{$last_jadwal->tanggal }} </label>
+					<label class="row justify-content-center" style="font-size: 24px"> Tanggal : {{$jadwal_temp->format('Y-m-d H:i:s') }} </label>
 					<div class="form-group">
 						<div class="col-md-6">
 							<form action="{{ URL::to('/fp') }}">
