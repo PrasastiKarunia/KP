@@ -14,3 +14,4 @@ Route::get('/fkp', 'FkpController@index')->name('fkp');
 Route::post('fkp.store','FkpController@store');
 Route::get('fp', 'FpController@index')->name('fp');
 Route::post('fp.store','FpController@store');
+Route::get('ctk', 'JadwalController@index');

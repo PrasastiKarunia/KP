@@ -19,8 +19,9 @@ class CreateFpsTable extends Migration
             $table->string('nama_sub');
             $table->string('nama_personal');
             $table->string('foto_diri')->nullable($value = true);
-            $table->string('no_ktp')->unique();
+            $table->string('no_ktp');
             $table->string('foto_ktp');
+            $table->string('no_kk');
             $table->string('alamat');
             $table->string('tanggal_lahir');
             $table->string('usia');
@@ -44,6 +45,7 @@ class CreateFpsTable extends Migration
             $table->string('s10')->nullable($value = true);
             $table->string('acceptTerms')->nullable($value = true);
             $table->string('status')->nullable($value = true);
+            $table->timestamp('tanggal');
             $table->timestamps();
         });
     }

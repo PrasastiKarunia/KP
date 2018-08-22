@@ -1,120 +1,91 @@
 <!doctype html>
-<html lang="{{ app()->getLocale() }}">
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+<html lang="en">
+<head>
+    <title>Sistem Safety Induction</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Tangerine">
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,900" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Knewave:normal,600" rel="stylesheet" type="text/css">
 
-        <title>Sistem Safety Induction</title>
+    <link rel="stylesheet" href="cssnew/bootstrap.css">
+    <link rel="stylesheet" href="cssnew/animate.css">
+    <link rel="stylesheet" href="cssnew/owl.carousel.min.css">
 
-        <!-- Fonts -->
-        <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="fonts/ionicons/css/ionicons.min.css">
+    <link rel="stylesheet" href="fonts/fontawesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="fonts/flaticon/font/flaticon.css">
 
-        <!-- Styles -->
-        <style>
-            html, body {
-                background-color: #006400;
-                /*#006400*/
-                /*color: #636b6f;*/
-                color: #fff;
-                font-family: 'Raleway', sans-serif;
-                font-weight: bold;
-                /*height: 100vh;*/
-                margin: 0;
-            }
+    <!-- Theme Style -->
+    <link rel="stylesheet" href="cssnew/style.css">
 
-            .full-height {
-                height: 100vh;
-            }
+    <style>
+    .links > a {
+        color: #ffffff;
+        padding: 0 25px;
+        font-size: 20px;
+        font-weight: 600;
+        letter-spacing: .1rem;
+        text-decoration: none;
+        text-transform: uppercase;
+    }
+</style>
 
-            .flex-center {
-                align-items: center;
-                display: flex;
-                justify-content: center;
-            }
-
-            .position-ref {
-                position: relative;
-            }
-
-            .top-right {
-                position: absolute;
-                right: 10px;
-                top: 18px;
-            }
-
-            .top-left {
-                position: absolute;
-                left: 10px;
-                top: 18px;
-            }
-
-            .content {
-                text-align: center;
-            }
-
-            .title {
-                font-size: 84px;
-            }
-
-            .links > a, ul, li{
-                color: #fff;
-                /*color: #636b6f;*/
-                padding: 0 25px;
-                font-size: 12px;
-                font-weight: 600;
-                letter-spacing: .1rem;
-                text-decoration: none;
-                text-transform: uppercase;
-                list-style-type: none;
-                margin: 0;
-                
-            }
-
-            .m-b-md {
-                margin-bottom: 30px;
-            }
-        </style>
-    </head>
-    <body>
-        <div class="position-ref full-height top-left">
-                <img src="img/logo2.png" width="250" height="100">
+</head>
+<body>
+    
+    <header role="banner">
+       
+      <nav class="navbar navbar-expand-md navbar-dark bg-light">
+        <div class="container">
+          <a class="navbar-brand absolute">Petrokimia</a>
         </div>
-        <div class="flex-center position-ref full-height container">
-            @if (Route::has('login'))
-                <div class="top-right links">
+</nav>
+</header>
+<!-- END header -->
+
+<section class="site-hero overlay" data-stellar-background-ratio="0.5" style="background-image: url(img/bgpos.png);">
+  <div class="container">
+    <div class="row align-items-center site-hero-inner justify-content-center">
+      <div class="col-md-8 text-center">
+
+        <div class="mb-5 element-animate">
+          <p><img src="img/logo2.png" width="175" height="75" style="margin-right: 30px; margin-bottom: 0px">
+          <img src="img/lk3.png" width="75" height="75" style="margin-bottom: 0px"></p>
+          <p class="lead" style="font-size: 50px; margin-top: 0px;">Sistem Pengajuan</p>
+          <h1 style="font-family:'Knewave', sans-serif; font-size: 80px;">Safety Induction</h1>
+          @if (Route::has('login'))
+          <div class="links">
                     @auth
-                        <a href="{{ url('/fkp') }}">Formulir Kontrak Perusahaan</a>
+                        <a href="{{ url('/fp') }}">Formulir Personal</a>
                     @else
-                        <a href="{{ route('login') }}" style="font-size: 14px">Login</a>
-                         <a href="{{ route('register') }}">Register</a>
+                        <a href="{{ route('login') }}">Login Perusahaan</a>
+                         <!-- <a href="{{ route('register') }}">Register</a> -->
                     @endauth
-                </div>
-            @endif
-            
+              </div>
+              @endif
+              <br>
+      </div>
+  </div>
+</div>
+</div>
+</section>
 
-            <div class="content">
-                <div class="title m-b-md">
-                    Sistem Safety Induction
-                </div>
+<!-- END footer -->
 
-                <!-- <div class="links">
-                    <ul class="menu">
-                        <a href="{{ url('/profil') }}"><li>Profil</li></a>
-                    <li>Laporan
-                        <ul class="subMenu">
-                            <a href="http://www.petrokimia-gresik.com/Pupuk/Laporan-Tahunan-dan-Laporan-Keberlanjutan" style="text-decoration: none"><li>Laporan Tahunan</li></a>
-                            <a href="#" style="text-decoration: none"><li>Grafik Tahunan</li></a>
-                            <a href="#" style="text-decoration: none"><li>Informasi</li></a>
-                        </ul>
-                    </li>
-                    <a href="https://laravel-news.com"><li>Berita</li></a>
-                    <a href="{{ url('/produk') }}"><li>Produk</li></a> -->
-                    <!-- <a href="{{ url('/produk') }}">Produk</a> -->
-                   <!--  <a href="https://github.com/laravel/laravel"><li>FAQs</li></a>
-                </ul>
-                </div> -->
-            </div>
-        </div>
-    </body>
+<!-- loader -->
+<div id="loader" class="show fullscreen"><svg class="circular" width="48px" height="48px"><circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee"/><circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#f4b214"/></svg></div>
+
+<script src="js/jquery-3.2.1.min.js"></script>
+<script src="js/jquery-migrate-3.0.0.js"></script>
+<script src="js/popper.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/owl.carousel.min.js"></script>
+<script src="js/jquery.waypoints.min.js"></script>
+<script src="js/jquery.stellar.min.js"></script>
+
+
+<script src="js/main.js"></script>
+</body>
 </html>

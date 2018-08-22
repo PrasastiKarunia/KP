@@ -48,7 +48,7 @@ class FpController extends Controller
             if(date_diff($last_jadwal,$jadwal_temp)->days < 0 ){
                 $jadwal_temp = $last_jadwal;
             }
-            elseif(Fp::where('tanggal', $last_jadwal)->count() < 5){
+            elseif(Fp::where('tanggal', $last_jadwal)->count() < 2){
                 Fp::create(array_merge($data->all(), ['tanggal' => $last_jadwal]));
                 $jadwal_temp = $last_jadwal;
                 return view("jadwal")->with(compact('jadwal_temp'));
@@ -60,7 +60,7 @@ class FpController extends Controller
             $jadwal_temp = $this->jadwal_selanjutnya($last_jadwal);
         }
         Fp::create(array_merge($data->all(), ['tanggal' => $jadwal_temp]));
-        return view("jadwal")->with(compact('jadwal_temp'));
+        return view("jadwal")->with(compact('jadwal_temp','nama_perusahaan'));
     }
 
     public function jadwal_selanjutnya($last_jadwal){ //katakanlah $last_jadwal hari kamis (tanggal 25)

@@ -5,7 +5,7 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">{{ __('Formulir Kontrak Perusahaan') }}</div>
+                <div class="card-header">{{ __('Informasi Kontrak Kerja Rekanan') }}</div>
 
                 <div class="card-body">
                     <form action="{{ URL::to('/fkp.store') }}"method="POST">
@@ -37,7 +37,7 @@
                             <label for="no_kon" class="col-md-4 col-form-label text-md-right">{{ __('No.Kontrak/SPK/OK*') }}</label>
 
                             <div class="col-md-6">
-                                <input id="no_kon" type="text" name="no_kon" class="form-control" onkeyup="validAngka(this)" required>
+                                <input id="no_kon" type="text" name="no_kon" class="form-control" required>
                             </div>
                         </div>
                         <div class="form-group row">
@@ -107,16 +107,16 @@
                             <label for="no_hp" class="col-md-4 col-form-label text-md-right" >{{ __('Kontak HP*') }}</label>
 
                             <div class="col-md-6">
-                                <input id="no_hp" type="text"  name="no_hp" class="form-control" maxlength="12" onkeyup="validAngka(this)" required>
+                                <input id="no_hp" type="text"  name="no_hp" class="form-control" onkeyup="validAngka(this)" required>
                             </div>
                         </div>
                         <div class="form-group row">
-                            <label for="akk" class="col-md-4 col-form-label text-md-right">{{ __('Asuransi Keselamatan Kerja*') }}</label>
+                            <label for="akk" class="col-md-4 col-form-label text-md-right">{{ __('Asuransi Kecelakaan Kerja*') }}</label>
 
                             <div class="col-md-4 col-form-label">
                                 <input id="akk" type="radio" name="akk" value="Personal" class="rad" checked>Personal<br>
-                                <input id="akk" type="radio" name="akk" value="Jasa" class="rad">Jasa Kontruksi<br>
-                                <input id="date_akk" type="date" name="date_akk" value="yyyy-mm-dd" min="1972-01-01" max="2050-12-31" style="display: none;">
+                                <input id="akk" type="radio" name="akk" value="Jasa" class="rad">Jasa Konstruksi<br>
+                                <input id="date_akk" type="date" name="date_akk" value="yyyy-mm-dd" min="1972-01-01" max="2050-12-31" style="display: none;" class="form-control">
                             </div>
                         </div>
 

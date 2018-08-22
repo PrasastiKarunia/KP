@@ -30,7 +30,7 @@
     <link href="../../assets/libs/jquery-steps/steps.css" rel="stylesheet">
     <link href="../../dist/css/style.min.css" rel="stylesheet">
 </head>
-<body>
+<body style="background-image: url('img/bgpas.png')">
     <nav class="navbar navbar-expand-md navbar-light navbar-laravel">
         <div class="container">
             <a class="navbar-brand" href="{{ url('/') }}" style="color: #fff">
@@ -94,6 +94,13 @@
                                             </div>
                                         </div>
                                         <div class="form-group row">
+                                            <label for="no_kk" class="col-md-4 col-form-label text-md-right">{{ __('No. KK*') }}</label>
+
+                                            <div class="col-md-6">
+                                                <input id="no_kk" type="text" name="no_kk" class="form-control" maxlength="16" onkeyup="validAngka(this)" required>
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
                                             <label for="alamat" class="col-md-4 col-form-label text-md-right">{{ __('Alamat*') }}</label>
 
                                             <div class="col-md-6">
@@ -122,7 +129,7 @@
                                             </div>
                                         </div>
                                         <div class="form-group row">
-                                            <label for="foto_akk" class="col-md-4 col-form-label text-md-right">{{ __('Asuransi Keselamatan Kerja*') }}</label>
+                                            <label for="foto_akk" class="col-md-4 col-form-label text-md-right">{{ __('Asuransi Kecelakaan Kerja*') }}</label>
 
                                             <div class="col-md-4 col-form-label">
                                                 <input id="foto_akk" type="file" name="foto_akk">
@@ -132,35 +139,35 @@
                                             <label for="helm_kuning" class="col-md-4 col-form-label text-md-right">{{ __('Helm Kuning') }}</label>
 
                                             <div class="col-form-label">
-                                                <input id="helm_kuning" type="checkbox" name="helm_kuning" value="Helm Kuning" required>*perlengkapan harus disiapkan
+                                                <input id="helm_kuning" type="checkbox" name="helm_kuning" value="ok" required>*perlengkapan harus disiapkan
                                             </div>
                                         </div>
                                         <div class="form-group row">
                                             <label for="seragam_pkg" class="col-md-4 col-form-label text-md-right">{{ __('Seragam Kontraktor PKG') }}</label>
                                             
                                             <div class="col-form-label">
-                                                <input id="seragam_pkg" type="checkbox" name="seragam_pkg" required>*perlengkapan harus disiapkan
+                                                <input id="seragam_pkg" type="checkbox" name="seragam_pkg" value="ok" required>*perlengkapan harus disiapkan
                                             </div>
                                         </div>
                                         <div class="form-group row">
                                             <label for="sepatu_safety" class="col-md-4 col-form-label text-md-right">{{ __('Sepatu Safety') }}</label>
 
                                             <div class="col-form-label">
-                                                <input id="sepatu_safety" type="checkbox" name="sepatu_safety" required>*perlengkapan harus disiapkan
+                                                <input id="sepatu_safety" type="checkbox" name="sepatu_safety" value="ok" required>*perlengkapan harus disiapkan
                                             </div>
                                         </div>
                                         <div class="form-group row">
                                             <label for="masker" class="col-md-4 col-form-label text-md-right">{{ __('Masker') }}</label>
 
                                             <div class="col-form-label">
-                                                <input id="masker" type="checkbox" name="masker" required>*perlengkapan harus disiapkan
+                                                <input id="masker" type="checkbox" name="masker" value="ok" required>*perlengkapan harus disiapkan
                                             </div>
                                         </div>
                                         <div class="form-group row">
                                             <label for="baju_panjang" class="col-md-4 col-form-label text-md-right">{{ __('Baju Lengan Panjang') }}</label>
 
                                             <div class="col-form-label">
-                                                <input id="baju_panjang" type="checkbox" name="baju_panjang" required>*perlengkapan harus disiapkan
+                                                <input id="baju_panjang" type="checkbox" name="baju_panjang" value="ok" required>*perlengkapan harus disiapkan
                                             </div>
                                         </div>
                                         <div class="form-group row">
@@ -176,11 +183,20 @@
                                         <div class="form-group row" style="margin-bottom: 0;">
                                             <label for="s1" class="col-md-8 text-md-left col-form-label" style="margin-bottom: 0;padding-bottom= 0;">1. Apa kepanjangan dari K3?</label></div>
                                             <div class="text-md-left col-form-label">
-                                                <input id="s1" type="radio" name="s1" value="a" required>a. Keselamatan Kelompok Kerja<br>
-                                                <input id="s1" type="radio" name="s1" value="b" required>b. Keselamatan dan Kesehatan Kerja <br>
-                                                <input id="s1" type="radio" name="s1" value="c" required>c. Keselamatan dan Keamanan Kerja <br>
-                                                <input id="s1" type="radio" name="s1" value="d" required>d. Kerjasama, Kinerja, Kepatuhan
+                                                <input id="s1" type="radio" name="s1" value="a" required>a. Mencegah terjadinya kecelakaan<br>
+                                                <input id="s1" type="radio" name="s1" value="b" required>b. Memenuhi permintaan pimpinan <br>
+                                                <input id="s1" type="radio" name="s1" value="c" required>c. Menambah beban kerja pekerja <br>
+                                                <input id="s1" type="radio" name="s1" value="d" required>d. Mencari kesalahan pekerja
                                             </div>
+                                            <div class="form-group row" style="margin-bottom: 0;">
+                                            <label for="s2" class="col-md-8 text-md-left col-form-label" style="margin-bottom: 0;padding-bottom= 0;">2. Apa yang menjadi tujuan dari diselenggarakannya K3 di tempat kerja?</label></div>
+                                            <div class="text-md-left col-form-label">
+                                                <input id="s2" type="radio" name="s2" value="a" required>a. Keselamatan Kelompok Kerja<br>
+                                                <input id="s2" type="radio" name="s2" value="b" required>b. Keselamatan dan Kesehatan Kerja <br>
+                                                <input id="s2" type="radio" name="s2" value="c" required>c. Keselamatan dan Keamanan Kerja <br>
+                                                <input id="s2" type="radio" name="s2" value="d" required>d. Kerjasama, Kinerja, Kepatuhan
+                                            </div>
+
                                         </section>
                                         <h3>Persetujuan</h3>
                                         <section>                                            

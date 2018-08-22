@@ -31,11 +31,11 @@
     <link href="../../assets/libs/jquery-steps/steps.css" rel="stylesheet">
     <link href="../../dist/css/style.min.css" rel="stylesheet">
 </head>
-<body>
+<body style="background-image: url('img/bgpas.png')">
     <div id="app">
         <nav class="navbar navbar-expand-md navbar-light navbar-laravel">
             <div class="container">
-                <a class="navbar-brand" href="{{ url('/') }}" style="color: #fff">
+                <a class="navbar-brand" style="color: #fff">
                     {{ config('app.name', 'SI Petrokimia') }}
                 </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
