@@ -31,8 +31,8 @@
 </head>
 <body leftmargin="0" rightmargin="0" topmargin="0" bottommargin="0">
 <div align="center"">
-    <p><img src="img/logo2.png" width="150" height="50" style="margin-right: 30px;">
-          <img src="img/lk3.jpg" width="50" height="50" style=""></p>
+    <p><img src="/img/logo2.png" width="150" height="50" style="margin-right: 30px;">
+          <img src="/img/lk3.jpg" width="50" height="50" style=""></p>
 <table align="center" cellpadding="4" cellspacing="0">
     <tr>
         <td align="center" colspan="5"><strong><font size="3">FORMULIR SAFETY INDUCTION</font></strong></td>
@@ -50,7 +50,7 @@
     </tr>
     <tr>
         <td class="EditTabLabel"><strong> Nama Personal </strong></td>
-        <td> Prasasti </td>
+        <td> {{$data->nama_personal}} </td>
     </tr>
     <tr>
         <td class="EditTabLabel"><strong> No. KTP </strong></td>

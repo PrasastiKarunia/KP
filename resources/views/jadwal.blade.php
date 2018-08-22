@@ -12,7 +12,7 @@
 					<label class="row justify-content-center" style="font-size: 24px"> Tanggal : {{$jadwal_temp->format('Y-m-d') }} </label>
 					<div class="form-group">
 						<div class="col-md-6">
-							<form action="{{ URL::to('/ctk') }}" target="_blank">
+							<form action="{{ URL::to('/ctk',$id) }}" target="_blank">
 								@csrf
 								<label class="row justify-content-center" style="text-align: center; color: red; font-size: 30px">Sebelum menambah personel, cetak terlebih dahulu formulir ini !!!!</label>								
 								<button type="submit" class="btn btn-primary" style="text-align: right;" >

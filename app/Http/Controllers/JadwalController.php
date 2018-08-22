@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Fp;
 
 class JadwalController extends Controller
 {
@@ -14,6 +15,11 @@ class JadwalController extends Controller
     public function index()
     {
         return view('ctk');
+    }
+
+    public function cetak($id){
+        $data = Fp::find($id)->first();
+        return view('ctk')->with(compact('data'));
     }
 
     /**

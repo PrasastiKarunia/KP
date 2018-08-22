@@ -59,8 +59,9 @@ class FpController extends Controller
             $last_jadwal = $jadwal_temp;
             $jadwal_temp = $this->jadwal_selanjutnya($last_jadwal);
         }
-        Fp::create(array_merge($data->all(), ['tanggal' => $jadwal_temp]));
-        return view("jadwal")->with(compact('jadwal_temp','nama_perusahaan'));
+        $Create = Fp::create(array_merge($data->all(), ['tanggal' => $jadwal_temp]));
+        $id = $Create->id;
+        return view("jadwal")->with(compact('jadwal_temp','nama_perusahaan', 'id'));
     }
 
     public function jadwal_selanjutnya($last_jadwal){ //katakanlah $last_jadwal hari kamis (tanggal 25)
